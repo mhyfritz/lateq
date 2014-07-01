@@ -6,18 +6,23 @@ var defaultFgColor = '#000000';
 $(document).ready(function() {
   showDefault();
 
+  $('#eqinput').on('change keyup paste', function() {
+    $('#displayarea').html(delimit($(this).val()));
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, "displayarea"]);
+  });
+
   $('#bgcolor').change(function() {
     setBgColor($('#bgcolor').val());
   });
 
   $('#fgcolor').change(function() {
     setFgColor($('#fgcolor').val());
-  });
+  }); 
 
 });
 
 function showDefault() {
-  $("textarea").val(defaultEq);
+  $("#eqinput").val(defaultEq);
   $("#displayarea").html(delimit(defaultEq));
   $("#fontsize").val(defaultFontSize);
   $("#bgcolor").val(defaultBgColor);
