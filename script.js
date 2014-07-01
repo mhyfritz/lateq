@@ -6,19 +6,22 @@ var defaultFgColor = '#000000';
 $(document).ready(function() {
   showDefault();
 
-  $('#eqinput').on('change keyup paste', function() {
-    $('#displayarea').html(delimit($(this).val()));
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub, "displayarea"]);
+  $("#eqinput").on('change keyup paste', function() {
+    $("#displayarea").html(delimit($(this).val()));
+    MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'displayarea']);
   });
 
-  $('#bgcolor').change(function() {
-    setBgColor($('#bgcolor').val());
+  $("#bgcolor").change(function() {
+    setBgColor($("#bgcolor").val());
   });
 
-  $('#fgcolor').change(function() {
-    setFgColor($('#fgcolor').val());
+  $("#fgcolor").change(function() {
+    setFgColor($("#fgcolor").val());
   }); 
 
+  $("#fontsize").on('input', function() {
+    setFontSize(getFontSize());
+  });
 });
 
 function showDefault() {
@@ -27,8 +30,8 @@ function showDefault() {
   $("#fontsize").val(defaultFontSize);
   $("#bgcolor").val(defaultBgColor);
   $("#fgcolor").val(defaultFgColor);
-  MathJax.Hub.Queue(["Typeset", MathJax.Hub, "displayarea"]);
-  MathJax.Hub.Queue(setFontSize);
+  MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'displayarea']);
+  MathJax.Hub.Queue(setFontSize(defaultFontSize));
   MathJax.Hub.Queue(setBgColor(defaultBgColor));
   MathJax.Hub.Queue(setFgColor(defaultFgColor));
 }
@@ -37,9 +40,12 @@ function delimit(s) {
   return '\\[' + s + '\\]';
 }
 
-function setFontSize() {
-  var fontSize = parseInt($('#fontsize').val(), 10);
-  $('#displayarea').css('font-size', fontSize);
+function getFontSize() {
+  return parseInt($("#fontsize").val(), 10);
+}
+
+function setFontSize(x) {
+  $('#displayarea').css('font-size', x);
 }
 
 function setBgColor(col) {
