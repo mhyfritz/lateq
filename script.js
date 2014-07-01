@@ -5,14 +5,23 @@ var defaultFgColor = '#000000';
 
 $(document).ready(function() {
   showDefault();
+
+  $('#bgcolor').change(function() {
+    setBgColor($('#bgcolor').val());
+  });
+
+  $('#fgcolor').change(function() {
+    setFgColor($('#fgcolor').val());
+  });
+
 });
 
 function showDefault() {
   $("textarea").val(defaultEq);
   $("#displayarea").html(delimit(defaultEq));
   $("#fontsize").val(defaultFontSize);
-  $("input[name='bg-color']").val(defaultBgColor);
-  $("input[name='fg-color']").val(defaultFgColor);
+  $("#bgcolor").val(defaultBgColor);
+  $("#fgcolor").val(defaultFgColor);
   MathJax.Hub.Queue(["Typeset", MathJax.Hub, "displayarea"]);
   MathJax.Hub.Queue(setFontSize);
   MathJax.Hub.Queue(setBgColor(defaultBgColor));
@@ -33,5 +42,5 @@ function setBgColor(col) {
 }
 
 function setFgColor(col) {
-    $("#displayarea").css("color", col);
+  $("#displayarea").css("color", col);
 }
