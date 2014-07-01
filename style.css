@@ -1,0 +1,28 @@
+@import url('http://fonts.googleapis.com/css?family=Abel|Cousine');
+
+textarea {
+  display: block;
+  margin: 0 auto;
+  font-family: Cousine;
+  font-size: 17px;
+}
+
+body {
+  font-family: Abel;
+  font-size: 22px;
+  text-align: center;
+}
+
+#controlarea {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+#displayarea {
+  width: 100%;
+}
+
+#displayarea {
+  margin: 10px 0;
+  padding: 10px 0;
+}
