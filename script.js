@@ -1,4 +1,4 @@
-var defaultEq = '\\sum_i P(x_i) \\log_2 P(x_i)';
+var defaultEq = 'H(X) = -\\sum_{i=1}^n p(x_i) \\log_2 p(x_i)';
 var defaultFontSize = 30;
 var defaultBgColor = '#ffffff';
 var defaultFgColor = '#000000';
