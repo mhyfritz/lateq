@@ -2,6 +2,8 @@ var defaultEq = '\\sum_i P(x_i) \\log_2 P(x_i)';
 var defaultFontSize = 30;
 var defaultBgColor = '#ffffff';
 var defaultFgColor = '#000000';
+var fontSizeStep = 20;
+var minFontSize = 5;
 
 $(document).ready(function() {
   showDefault();
@@ -21,6 +23,21 @@ $(document).ready(function() {
 
   $("#fontsize").on('input', function() {
     setFontSize(getFontSize());
+  });
+
+  $("#fontsizeplus").on('click', function() {
+    var newFontSize = getFontSize() + fontSizeStep;
+    $("#fontsize").val(newFontSize);
+    setFontSize(newFontSize);
+  });
+
+  $("#fontsizeminus").on('click', function() {
+    var oldFontSize = getFontSize();
+    var newFontSize = oldFontSize < (minFontSize + fontSizeStep)
+                      ? minFontSize
+                      : oldFontSize - fontSizeStep;
+    $("#fontsize").val(newFontSize);
+    setFontSize(newFontSize);
   });
 });
 

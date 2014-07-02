@@ -22,3 +22,14 @@ body {
   margin: 10px 0;
   padding: 10px 0;
 }
+
+#fontsize {
+  width: 5em;
+}
+
+.button {
+  width: 3em;
+  background-color: #cdcdcd;
+  border: 1px solid #777;
+  text-decoration: none;
+}
