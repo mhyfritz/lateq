@@ -1,5 +1,10 @@
 @import url('http://fonts.googleapis.com/css?family=Abel|Cousine');
 
+body, div {
+  margin: 0;
+  padding: 0; 
+}
+
 textarea {
   display: block;
   margin: 0 auto;
@@ -11,6 +16,10 @@ body {
   font-family: Abel;
   font-size: 22px;
   text-align: center;
+}
+
+#inputarea {
+  margin-top: 10px;
 }
 
 #controlarea {
