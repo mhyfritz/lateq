@@ -9,4 +9,9 @@ there is no functionality to export to an image, so one needs
 a separate screenshot app with *grab area* functionality. Your OS probably
 has you covered.
 
-The heavy lifting is done by [MathJax](http://www.mathjax.org/). Hat tip!
+Clone this repo with `git clone --recursive`.
+
+The heavy lifting is done by the following dependencies. Hat tip!
+
+* equations are rendered via [MathJax](http://www.mathjax.org/)
+* colorpicker provided by [spectrum](https://github.com/bgrins/spectrum)
