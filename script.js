@@ -47,6 +47,7 @@ function showDefault() {
   $("#fontsize").val(defaultFontSize);
   $("#bgcolor").spectrum({
     color: defaultBgColor,
+    preferredFormat: "hex",
     showInput: true,
     showPalette: true,
     palette: ['white', 'black'],
@@ -54,6 +55,7 @@ function showDefault() {
   });
   $("#fgcolor").spectrum({
     color: defaultFgColor,
+    preferredFormat: "hex",
     showInput: true,
     showPalette: true,
     palette: ['black', 'white'],
