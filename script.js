@@ -45,8 +45,20 @@ function showDefault() {
   $("#eqinput").val(defaultEq);
   $("#displayarea").html(delimit(defaultEq));
   $("#fontsize").val(defaultFontSize);
-  $("#bgcolor").val(defaultBgColor);
-  $("#fgcolor").val(defaultFgColor);
+  $("#bgcolor").spectrum({
+    color: defaultBgColor,
+    showInput: true,
+    showPalette: true,
+    palette: ['white', 'black'],
+    replacerClassName: 'colorPicker'
+  });
+  $("#fgcolor").spectrum({
+    color: defaultFgColor,
+    showInput: true,
+    showPalette: true,
+    palette: ['black', 'white'],
+    replacerClassName: 'colorPicker'
+  });
   MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'displayarea']);
   MathJax.Hub.Queue(setFontSize(defaultFontSize));
   MathJax.Hub.Queue(setBgColor(defaultBgColor));

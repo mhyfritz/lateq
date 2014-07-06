@@ -38,7 +38,12 @@ body {
 
 .button {
   width: 3em;
-  background-color: #cdcdcd;
+  background-color: #ddd;
   border: 1px solid #777;
   text-decoration: none;
+}
+
+/* set inside script.js */
+.colorPicker {
+  background: #ddd; /* same as .button background */
 }
